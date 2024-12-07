@@ -1,31 +1,27 @@
 <?php
 
-namespace App\Events\Item\User;
+namespace Returfs\Marketplace\External\Laravel\Items\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use Returfs\Marketplace\External\Laravel\Items\Data\Contracts\NewItemDataContract;
+use Returfs\Marketplace\External\Laravel\Items\Events\Contracts\UpdateItemInstanceMetaEventContract;
 
 /**
- * Class CreateNewItemEvent
+ * Class UpdateItemInstanceMetaEvent
  *
  * @implements CreateNewItem<NewItemData>
  */
-class UpdateNewItemEvent
+class UpdateItemInstanceMetaEvent implements UpdateItemInstanceMetaEventContract
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
      * Create a new event instance.
      */
-    public function __construct(public NewItemDataContract $newItemData)
-    {
-        //
-        ray('here');
-    }
+    public function __construct(public array $validatedData, public string $id) {}
 
     /**
      * Get the channels the event should broadcast on.
