@@ -7,14 +7,14 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use Returfs\Marketplace\External\Laravel\Items\Events\Contracts\UpdateItemInstanceMetaEventContract;
+use Returfs\Marketplace\External\Laravel\Items\Events\Contracts\UpdateItemEventContract;
 
 /**
- * Class UpdateItemInstanceMetaEvent
+ * Class UpdateItemEvent
  *
- * @implements UpdateItemInstanceMetaEventContract<NewItemData>
+ * @implements UpdateItemEventContract<NewItemData>
  */
-class UpdateItemInstanceMetaEvent implements UpdateItemInstanceMetaEventContract
+class UpdateItemEvent implements UpdateItemEventContract
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
