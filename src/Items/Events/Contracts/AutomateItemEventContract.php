@@ -7,7 +7,7 @@ namespace Returfs\Marketplace\External\Laravel\Items\Events\Contracts;
  *
  * todo: php 8.4 fixes this
  *
- * @property-read T $convertItemData
+ * @property-read T $automateItemData
  * @property-read ?string $socket
  */
 interface AutomateItemEventContract {}
